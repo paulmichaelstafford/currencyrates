@@ -8,6 +8,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 @Component
 public class CurrencyScheduler {
@@ -23,7 +25,8 @@ public class CurrencyScheduler {
 
 //    @Scheduled(cron = "* * * * * *")
     @PostConstruct
-    public void getDailyRates() throws IOException, ZipException {
-        exchangeRateProxy.getDailyRates();
+    public void getDailyRates() throws IOException, ZipException, InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        Map<Currency, Float> dailyRates = exchangeRateProxy.getDailyRates();
+        currentExchangeRateService.updateRates(dailyRates);
     }
 }

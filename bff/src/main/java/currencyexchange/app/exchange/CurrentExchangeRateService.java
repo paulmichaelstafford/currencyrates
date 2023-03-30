@@ -15,6 +15,7 @@ public class CurrentExchangeRateService {
                 rates.put(dailyRate.getKey(), dailyRate.getValue());
             }
         }
+        System.out.println(rates);
     }
     public Float getRate(Currency currency) {
         return rates.get(currency);
