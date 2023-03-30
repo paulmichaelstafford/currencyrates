@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/currencies")
 public class ConverterController {
@@ -22,10 +23,12 @@ public class ConverterController {
         return currentExchangeRateService.getRates();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{currency}/{value}")
-    public Float getClicksAndCosts(@PathVariable Currency currency, @PathVariable Float value)
+    @RequestMapping(method = RequestMethod.GET, value = "/{fromCurrency}/{toCurrency}/{value}")
+    public Float getClicksAndCosts(@PathVariable Currency fromCurrency,
+                                   @PathVariable Currency toCurrency,
+                                   @PathVariable Float value)
     {
-        return currentExchangeRateService.getRate(currency);
+        return currentExchangeRateService.getRate(fromCurrency, toCurrency, value);
     }
 
 

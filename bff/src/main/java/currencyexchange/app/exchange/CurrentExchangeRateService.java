@@ -1,6 +1,7 @@
 package currencyexchange.app.exchange;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,8 +18,7 @@ public class CurrentExchangeRateService {
     public Map<Currency, Float> getRates() {
         return rates;
     }
-
-    public Float getRate(Currency currency) {
-        return rates.get(currency);
+    public Float getRate(Currency fromCurrency, Currency toCurrency, Float value) {
+        return Double.valueOf(Math.round(( rates.get(fromCurrency) / rates.get(toCurrency) * value) *100.0)/100.0).floatValue();
     }
 }

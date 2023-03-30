@@ -10,7 +10,7 @@ export class CurrencyBffHttp {
 
     constructor(private http: HttpClient) { }
 
-    async convert(currency: Currency, value: number): Promise<number> {
-        return firstValueFrom(this.http.get<number>(`${this.URL}/${currency}/${value}`));
+    public convert(fromCurrency: Currency, toCurrency: Currency, value: number): Promise<number> {
+        return firstValueFrom(this.http.get<number>(`${this.URL}/${fromCurrency}/${toCurrency}/${value}`));
     }
 }

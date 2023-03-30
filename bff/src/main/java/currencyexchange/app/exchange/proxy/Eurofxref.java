@@ -14,86 +14,86 @@ public class Eurofxref {
     @CsvBindByName(column = "JPY")
     @CsvBindByPosition(position = 2)
     private Float JPY;
-    @CsvBindByName(column = "BGN,")
-    @CsvBindByPosition(position = 4)
+    @CsvBindByName(column = "BGN")
+    @CsvBindByPosition(position = 3)
     private Float BGN;
     @CsvBindByName(column = "CZK")
-    @CsvBindByPosition(position = 5)
+    @CsvBindByPosition(position = 4)
     private Float CZK;
     @CsvBindByName(column = "DKK")
-    @CsvBindByPosition(position = 6)
+    @CsvBindByPosition(position = 5)
     private Float DKK;
     @CsvBindByName(column = "GBP")
-    @CsvBindByPosition(position = 7)
+    @CsvBindByPosition(position = 6)
     private Float GBP;
     @CsvBindByName(column = "HUF")
-    @CsvBindByPosition(position = 8)
+    @CsvBindByPosition(position = 7)
     private Float HUF;
     @CsvBindByName(column = "PLN")
-    @CsvBindByPosition(position = 9)
+    @CsvBindByPosition(position = 8)
     private Float PLN;
     @CsvBindByName(column = "RON")
-    @CsvBindByPosition(position = 10)
+    @CsvBindByPosition(position = 9)
     private Float RON;
     @CsvBindByName(column = "SEK")
-    @CsvBindByPosition(position = 11)
+    @CsvBindByPosition(position = 10)
     private Float SEK;
     @CsvBindByName(column = "CHF")
-    @CsvBindByPosition(position = 12)
+    @CsvBindByPosition(position = 11)
     private Float CHF;
     @CsvBindByName(column = "ISK")
-    @CsvBindByPosition(position = 13)
+    @CsvBindByPosition(position = 12)
     private Float ISK;
     @CsvBindByName(column = "NOK")
-    @CsvBindByPosition(position = 14)
+    @CsvBindByPosition(position = 13)
     private Float NOK;
     @CsvBindByName(column = "TRY")
-    @CsvBindByPosition(position = 15)
+    @CsvBindByPosition(position = 14)
     private Float TRY;
     @CsvBindByName(column = "CNY")
-    @CsvBindByPosition(position = 16)
+    @CsvBindByPosition(position = 15)
     private Float CNY;
     @CsvBindByName(column = "AUD")
-    @CsvBindByPosition(position = 17)
+    @CsvBindByPosition(position = 16)
     private Float AUD;
     @CsvBindByName(column = "BRL")
-    @CsvBindByPosition(position = 18)
+    @CsvBindByPosition(position = 17)
     private Float BRL;
     @CsvBindByName(column = "CAD")
-    @CsvBindByPosition(position = 19)
+    @CsvBindByPosition(position = 18)
     private Float CAD;
     @CsvBindByName(column = "IDR")
-    @CsvBindByPosition(position = 20)
+    @CsvBindByPosition(position = 19)
     private Float IDR;
     @CsvBindByName(column = "ILS")
-    @CsvBindByPosition(position = 21)
+    @CsvBindByPosition(position = 20)
     private Float ILS;
     @CsvBindByName(column = "INR")
-    @CsvBindByPosition(position = 22)
+    @CsvBindByPosition(position = 21)
     private Float INR;
     @CsvBindByName(column = "KRW")
-    @CsvBindByPosition(position = 23)
+    @CsvBindByPosition(position = 22)
     private Float KRW;
     @CsvBindByName(column = "MXN")
-    @CsvBindByPosition(position = 24)
+    @CsvBindByPosition(position = 23)
     private Float MXN;
     @CsvBindByName(column = "MYR")
-    @CsvBindByPosition(position = 25)
+    @CsvBindByPosition(position = 24)
     private Float MYR;
     @CsvBindByName(column = "NZD")
-    @CsvBindByPosition(position = 26)
+    @CsvBindByPosition(position = 25)
     private Float NZD;
     @CsvBindByName(column = "PHP")
-    @CsvBindByPosition(position = 27)
+    @CsvBindByPosition(position = 26)
     private Float PHP;
     @CsvBindByName(column = "SGD")
-    @CsvBindByPosition(position = 28)
+    @CsvBindByPosition(position = 27)
     private Float SGD;
     @CsvBindByName(column = "THB")
-    @CsvBindByPosition(position = 29)
+    @CsvBindByPosition(position = 28)
     private Float THB;
     @CsvBindByName(column = "ZAR")
-    @CsvBindByPosition(position = 30)
+    @CsvBindByPosition(position = 29)
     private Float ZAR;
 
     public String getDate() {
