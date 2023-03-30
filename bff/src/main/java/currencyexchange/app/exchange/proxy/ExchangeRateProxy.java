@@ -3,15 +3,7 @@ package currencyexchange.app.exchange.proxy;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import currencyexchange.app.exchange.Currency;
-import org.springframework.core.io.buffer.DataBuffer;
-import org.springframework.core.io.buffer.DataBufferUtils;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.netty.http.client.HttpClient;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -28,19 +20,20 @@ import net.lingala.zip4j.core.ZipFile;
 @Service
 public class ExchangeRateProxy {
     private final String fileName = "eurofxref";
-    private final String urlEndPoint = "https://www.ecb.europa.eu/stats/eurofxref/"+fileName+".zip";
+
     public Map<Currency, Float> getDailyRates() {
         try {
             Path zipPath = downloadZipFile();
             File zipFile = extractZipFile(zipPath);
             return readRatesFromFile(zipFile);
         } catch (Exception e) {
-            throw new RuntimeException(String.format("Problem getting daily rates %s", e.getMessage()));
+            throw new RuntimeException(String.format("Problem getting/extracting daily rates %s", e.getMessage()));
         }
     }
 
     private Path downloadZipFile() throws IOException {
         Path path = Files.createTempFile(fileName, ".zip");
+        String urlEndPoint = "https://www.ecb.europa.eu/stats/eurofxref/" + fileName + ".zip";
         try (BufferedInputStream in = new BufferedInputStream(new URL(urlEndPoint).openStream());
              FileOutputStream fileOutputStream = new FileOutputStream(path.toUri().getPath())) {
             byte[] dataBuffer = new byte[1024];
