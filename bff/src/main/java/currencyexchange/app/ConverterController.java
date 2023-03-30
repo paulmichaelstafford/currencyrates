@@ -22,8 +22,8 @@ public class ConverterController {
         return currentExchangeRateService.getRates();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{currency}")
-    public Float getClicksAndCosts(@PathVariable  Currency currency)
+    @RequestMapping(method = RequestMethod.GET, value = "/{currency}/{value}")
+    public Float getClicksAndCosts(@PathVariable Currency currency, @PathVariable Float value)
     {
         return currentExchangeRateService.getRate(currency);
     }

@@ -25,7 +25,7 @@ public class CurrencyScheduler {
 
 //    @Scheduled(cron = "* * * * * *")
     @PostConstruct
-    public void getDailyRates() throws IOException, ZipException, InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+    public void getDailyRates() {
         Map<Currency, Float> dailyRates = exchangeRateProxy.getDailyRates();
         currentExchangeRateService.updateRates(dailyRates);
     }

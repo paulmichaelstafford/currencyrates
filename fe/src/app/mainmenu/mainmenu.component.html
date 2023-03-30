@@ -1,0 +1,39 @@
+﻿
+<div class="example-container">
+  <br>
+  <form [formGroup]="currencyFormGroup" >    
+    <div class="example-form-fields">
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Left Currency</mat-label>
+        <mat-select formControlName="leftCurrency">
+          <mat-option *ngFor="let a of currencies" [value]="a">{{a}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="currencyFormGroup.get('leftCurrency')?.errors">required</mat-error>
+      </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <input matInput type="number" formControlName="leftText" required>
+            <mat-error *ngIf="currencyFormGroup.get('leftText')?.errors">required</mat-error>
+        </mat-form-field>  
+
+    </div>
+    <div class="example-form-fields">
+      
+      <mat-form-field appearance="fill" >
+        <mat-label>Right Currency</mat-label>
+        <mat-select formControlName="rightCurrency">
+          <mat-option *ngFor="let a of currencies" [value]="a">{{a}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="currencyFormGroup.get('rightCurrency')?.errors">required</mat-error>
+      </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <input matInput type="number" formControlName="rightText" required>
+            <mat-error *ngIf="currencyFormGroup.get('rightText')?.errors">required</mat-error>
+        </mat-form-field>  
+
+    </div>
+
+  </form>
+</div>

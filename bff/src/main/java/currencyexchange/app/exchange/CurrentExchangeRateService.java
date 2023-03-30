@@ -10,6 +10,7 @@ public class CurrentExchangeRateService {
     private final Map<Currency, Float> rates = new HashMap<>();
     public void updateRates(Map<Currency, Float> dailyRates) {
         rates.clear();
+        rates.put(Currency.EUR, 1f);
         rates.putAll(dailyRates);
     }
 
