@@ -1,8 +1,0 @@
-spring:
-    kafka:
-        bootstrapAddress: 'http://kafka:31092'
-        groupId: 'bff_develop_group'
-    data:
-        mongodb:
-            uri: 'mongodb://devs:password@mongodb:27017'
-            database: 'cache_develop_db'
