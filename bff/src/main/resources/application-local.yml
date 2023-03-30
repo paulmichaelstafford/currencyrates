@@ -1,0 +1,6 @@
+spring:
+    kafka:
+        groupId: 'bff_local_group'
+    data:
+        mongodb:
+            database: 'cache_local_db'

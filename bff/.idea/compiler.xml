@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bff" />
+        <module name="currencyexchange" />
+        <module name="neptunecache" />
+        <module name="neptune" />
+        <module name="base" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="category" target="11" />
+      <module name="route" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="base" options="-parameters" />
+      <module name="bff" options="-parameters" />
+      <module name="cache" options="-parameters" />
+      <module name="category" options="-parameters" />
+      <module name="currencyexchange" options="-parameters" />
+      <module name="neptune" options="-parameters" />
+      <module name="route" options="-parameters" />
+    </option>
+  </component>
+</project>

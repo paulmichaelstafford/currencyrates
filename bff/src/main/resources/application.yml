@@ -1,0 +1,27 @@
+server:
+    port: 8085
+    tomcat:
+        connection-timeout: 600s
+
+logging:
+    level.org.springframework: INFO
+
+management:
+    endpoints:
+        web:
+            base-path: /actuator
+            exposure:
+                include: info, health, metrics, prometheus
+
+spring:
+    application:
+        name: "cache"
+    kafka:
+        bootstrapAddress: 'http://localhost:9092'
+        consumer:
+            properties:
+                spring.json.trusted.packages: "*"
+    data:
+        mongodb:
+            uri: 'mongodb://user:password@localhost:27017'
+            authentication-database: admin

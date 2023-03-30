@@ -1,0 +1,6 @@
+spring:
+    kafka:
+        groupId: 'test_group'
+    data:
+        mongodb:
+            database: 'test'
