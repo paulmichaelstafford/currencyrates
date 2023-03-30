@@ -9,13 +9,14 @@ import java.util.Map;
 public class CurrentExchangeRateService {
     private final Map<Currency, Float> rates = new HashMap<>();
     public void updateRates(Map<Currency, Float> dailyRates) {
-        for (Map.Entry<Currency, Float> dailyRate : dailyRates.entrySet()){
-            rates.putIfAbsent(dailyRate.getKey(), dailyRate.getValue());
-            if(rates.get(dailyRate.getKey()) < dailyRate.getValue()) {
-                rates.put(dailyRate.getKey(), dailyRate.getValue());
-            }
-        }
+        rates.clear();
+        rates.putAll(dailyRates);
     }
+
+    public Map<Currency, Float> getRates() {
+        return rates;
+    }
+
     public Float getRate(Currency currency) {
         return rates.get(currency);
     }
